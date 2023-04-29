@@ -18,3 +18,42 @@ int maxProfit(vector<int>& prices) {
     }
     return global;
 }
+
+
+// More easy
+
+int maxProfit(vector<int>& prices) {
+       int minPrice = INT_MAX;
+        int maxProfit = 0;
+        for(int i = 0; i < prices.size(); i++){
+            if(prices[i] < minPrice){
+                minPrice = prices[i];
+            } else {
+                maxProfit = max(maxProfit, prices[i] - minPrice);
+            }
+        }
+        return maxProfit;
+    }
+
+
+
+//  More easy
+
+int maxProfit(vector<int>& prices) {
+        int pricesSize = prices.size();
+        int minPricePos = 0,maxProfit = 0;
+    for(int i = 1;i<pricesSize;i++)
+    {
+        if(prices[i] - prices[minPricePos] > maxProfit)
+            maxProfit = prices[i] - prices[minPricePos] ;
+        else if(prices[i] - prices[minPricePos] < 0)
+            minPricePos = i;
+    }
+    return maxProfit;
+    }
+
+
+
+
+
+
