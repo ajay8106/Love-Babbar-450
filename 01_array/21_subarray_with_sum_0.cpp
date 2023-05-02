@@ -23,7 +23,12 @@ bool subArrayExists(int arr[], int n)
     return 0;
 }
 
+// More easy - just explanation 
 
+To see why this is true, consider the following: Suppose we have seen the prefix sum sum before at position j in the array, 
+where j < i. This means that the sum of the elements from arr[0] to arr[j] is equal to sum. 
+But since we have also calculated the prefix sum up to position i and found that it is equal to sum, 
+this means that the sum of the elements from arr[j+1] to arr[i] is equal to 0. Therefore, there exists a subarray whose sum is 0.
 
 // ----------------------------------------------------------------------------------------------------------------------- //
 // alternate solution
