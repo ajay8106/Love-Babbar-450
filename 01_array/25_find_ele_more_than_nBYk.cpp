@@ -52,3 +52,42 @@ void morethanNbyK(int arr[], int n, int k)
         }
     }
 }
+
+
+// More easy -- similar solution -- own code
+
+int countOccurence(int arr[], int n, int k) {
+        int count =0;
+        int check = n/k;
+        unordered_map <int, int> m;
+        for(int i=0;i<n;i++){
+            m[arr[i]]++;
+        }
+        
+        for(int i=0;i<n;i++){
+            if(m[arr[i]] > check){
+                count++;
+                m[arr[i]] = -1;
+            }
+        }
+        
+        return count;
+
+    }
+
+///// remember for(auto it  : mp)
+
+unordered_map<int,int> mp;
+        int a = n/k;
+        
+        for(int i =0;i<n;i++){
+            mp[arr[i]]++;
+        }
+        
+        int count =0;
+        for(auto it  : mp){
+            if(it.second>a){
+                count++;
+            }
+        }
+
